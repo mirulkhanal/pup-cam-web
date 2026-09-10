@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #dfe8df;
+  --bg-deep: #c5d4c6;
+  --ink: #172017;
+  --muted: #4d5c4f;
+  --panel: rgba(250, 252, 249, 0.82);
+  --line: rgba(23, 32, 23, 0.12);
+  --accent: #1f6b4a;
+  --accent-ink: #f4fff8;
+  --danger: #8f2f2f;
+  --stage: #0e1510;
+  --shadow: 0 24px 60px rgba(23, 32, 23, 0.18);
+  font-family: 'Outfit', system-ui, sans-serif;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+}

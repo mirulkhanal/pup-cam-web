@@ -1,0 +1,26 @@
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT:-3001}:3001"
+    env_file:
+      - ./server/.env
+    environment:
+      PORT: 3001
+      AUTH_TOKEN: ${AUTH_TOKEN:-}
+      CORS_ORIGIN: ${CORS_ORIGIN:-*}
+      STUN_URLS: ${STUN_URLS:-stun:stun.l.google.com:19302}
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3001/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 3s
+      retries: 5
